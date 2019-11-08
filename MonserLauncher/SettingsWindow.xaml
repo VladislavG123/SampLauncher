@@ -1,0 +1,50 @@
+﻿<Window x:Class="MonserLauncher.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MonserLauncher"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="SettingsWindow" Height="200" Width="300" ResizeMode="NoResize" WindowStyle="None">
+    <Grid RenderTransformOrigin="0.5,0.5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="300,300" MappingMode="Absolute" SpreadMethod="Repeat" Opacity="0.565">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF321802" Offset="1"/>
+                <GradientStop Color="#FF661414" Offset="0.507"/>
+                <GradientStop Color="#FFFDAC00" Offset="0.753"/>
+                <GradientStop Color="#FE9B1C08" Offset="0.58"/>
+                <GradientStop Color="Black"/>
+                <GradientStop Color="Black"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Canvas Grid.Row="0">
+            <Button Canvas.Right="5" Canvas.Top="5" MouseLeave="ButtonMouseLeave" MouseEnter="ButtonMouseEnter" Width="40" Height="40" Foreground="#FFCD0000" Grid.Column="2" Style="{DynamicResource MaterialDesignFloatingActionLightButton}" Background="#00CD0000" BorderBrush="#FFCD0000" Click="ExitButtonClick">
+                <materialDesign:PackIcon Kind="Close" Height="30" Width="auto"/>
+            </Button>
+        </Canvas>
+        <Grid Grid.Row="1">
+
+            <TextBox BorderThickness="0" IsReadOnly="True" materialDesign:TextFieldAssist.DecorationVisibility="Hidden" FontSize="15" TextAlignment="Center"  Foreground="#CCFFFFFF" CaretBrush="#FFCD0000" SelectionBrush="#FFCD0000" BorderBrush="#05CD0000" FontWeight="Bold" Background="#24CD0000" Text="Укажите коренную папку с игрой&#xD;&#xA; GTA San Andreas"/>
+
+        </Grid>
+        <Grid Grid.Row="2">
+            <Button Click="SelectFolderButton">Выбрать путь</Button>
+        </Grid>
+
+    </Grid>
+</Window>
